@@ -60,7 +60,7 @@ SpeciesParser::parseSpeciesCSV($contents);
 if (!empty($_POST)) {
 
     if ($_POST['action'] == "create")   {
-        if($_POST["weight"]== "integer"&&$_POST["weight"]== "integer")
+        if(is_numeric($_POST["weight"])&& is_numeric($_POST["weight"]))
         {
         //Create new Log
         RestClient::call("POST",$_POST);
